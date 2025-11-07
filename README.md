@@ -29,7 +29,7 @@ All public datasets were merged, shuffled, and stratified to preserve representa
 The U²-Net-E is designed for fine-grained feature capture, which is essential for segmenting thin capillaries:
 
 - **Backbone**: U²-Net-lite, a nested U-structure using Residual U-blocks (RSU) to effectively fuse multi-scale information.
-- **Enhancement module (hybrid mode)**: Combines green-channel emphasis with adaptive pre-processing (akin to CLAHE) and vessel-specific residual enhancement to boost vessel contrast and reduce domain shift across the four input datasets.
+- **Enhancement module (hybrid mode)**: Combines green-channel emphasis with per-image min-max stretching, deep residual CNN enhancement, and learnable adaptive contrast correction to boost vessel contrast and reduce domain shift across the four input datasets.
 
 ### 2.2 Patch-Based Strategy for HRF Complexity
 
