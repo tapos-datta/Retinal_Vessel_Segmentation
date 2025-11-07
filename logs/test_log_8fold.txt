@@ -1,0 +1,363 @@
+2025-11-07 16:24:08,088 | Found 41 checkpoints. Testing the 15 most recent ones.
+2025-11-07 16:24:08,088 | 
+--- Evaluating Checkpoint: best_model_epoch_3834_val_0.1330.pth ---
+2025-11-07 16:24:08,088 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_3834_val_0.1330.pth
+2025-11-07 16:24:08,221 | Starting test inference with TTA...
+2025-11-07 16:24:14,168 | Image 1/11 - Dice: 0.7792, Sensitivity: 0.8612
+2025-11-07 16:24:19,964 | Image 2/11 - Dice: 0.7844, Sensitivity: 0.8504
+2025-11-07 16:24:25,706 | Image 3/11 - Dice: 0.7663, Sensitivity: 0.8767
+2025-11-07 16:24:31,427 | Image 4/11 - Dice: 0.7848, Sensitivity: 0.8631
+2025-11-07 16:24:37,150 | Image 5/11 - Dice: 0.8649, Sensitivity: 0.9114
+2025-11-07 16:24:37,577 | Image 6/11 - Dice: 0.8047, Sensitivity: 0.8886
+2025-11-07 16:24:37,982 | Image 7/11 - Dice: 0.7960, Sensitivity: 0.9046
+2025-11-07 16:24:38,751 | Image 8/11 - Dice: 0.8535, Sensitivity: 0.9115
+2025-11-07 16:24:39,504 | Image 9/11 - Dice: 0.8093, Sensitivity: 0.8822
+2025-11-07 16:24:39,912 | Image 10/11 - Dice: 0.8108, Sensitivity: 0.9170
+2025-11-07 16:24:40,317 | Image 11/11 - Dice: 0.8138, Sensitivity: 0.8878
+2025-11-07 16:24:40,317 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:24:40,317 | Average Dice Coefficient: 0.8062
+2025-11-07 16:24:40,317 | Average IoU (Jaccard): 0.6763
+2025-11-07 16:24:40,317 | Average Accuracy: 0.9705
+2025-11-07 16:24:40,317 | Average Sensitivity (Recall): 0.8868
+2025-11-07 16:24:40,317 | Average Specificity: 0.9768
+2025-11-07 16:24:40,317 | -------------------------------------
+2025-11-07 16:24:40,318 | 
+--- Evaluating Checkpoint: best_model_epoch_3216_val_0.1330.pth ---
+2025-11-07 16:24:40,318 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_3216_val_0.1330.pth
+2025-11-07 16:24:40,448 | Starting test inference with TTA...
+2025-11-07 16:24:46,128 | Image 1/11 - Dice: 0.7743, Sensitivity: 0.8664
+2025-11-07 16:24:51,865 | Image 2/11 - Dice: 0.7793, Sensitivity: 0.8658
+2025-11-07 16:24:57,611 | Image 3/11 - Dice: 0.7495, Sensitivity: 0.8959
+2025-11-07 16:25:03,385 | Image 4/11 - Dice: 0.7819, Sensitivity: 0.8680
+2025-11-07 16:25:09,141 | Image 5/11 - Dice: 0.8642, Sensitivity: 0.9183
+2025-11-07 16:25:09,547 | Image 6/11 - Dice: 0.8106, Sensitivity: 0.8684
+2025-11-07 16:25:09,952 | Image 7/11 - Dice: 0.8048, Sensitivity: 0.8938
+2025-11-07 16:25:10,706 | Image 8/11 - Dice: 0.8469, Sensitivity: 0.9193
+2025-11-07 16:25:11,458 | Image 9/11 - Dice: 0.8041, Sensitivity: 0.8913
+2025-11-07 16:25:11,868 | Image 10/11 - Dice: 0.8137, Sensitivity: 0.9188
+2025-11-07 16:25:12,276 | Image 11/11 - Dice: 0.8150, Sensitivity: 0.8897
+2025-11-07 16:25:12,276 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:25:12,276 | Average Dice Coefficient: 0.8040
+2025-11-07 16:25:12,276 | Average IoU (Jaccard): 0.6734
+2025-11-07 16:25:12,276 | Average Accuracy: 0.9700
+2025-11-07 16:25:12,276 | Average Sensitivity (Recall): 0.8905
+2025-11-07 16:25:12,276 | Average Specificity: 0.9760
+2025-11-07 16:25:12,276 | -------------------------------------
+2025-11-07 16:25:12,277 | 
+--- Evaluating Checkpoint: best_model_epoch_2655_val_0.1338.pth ---
+2025-11-07 16:25:12,278 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_2655_val_0.1338.pth
+2025-11-07 16:25:12,407 | Starting test inference with TTA...
+2025-11-07 16:25:18,162 | Image 1/11 - Dice: 0.7794, Sensitivity: 0.8604
+2025-11-07 16:25:23,954 | Image 2/11 - Dice: 0.7802, Sensitivity: 0.8625
+2025-11-07 16:25:29,707 | Image 3/11 - Dice: 0.7514, Sensitivity: 0.8931
+2025-11-07 16:25:35,471 | Image 4/11 - Dice: 0.7842, Sensitivity: 0.8605
+2025-11-07 16:25:41,198 | Image 5/11 - Dice: 0.8668, Sensitivity: 0.9097
+2025-11-07 16:25:41,613 | Image 6/11 - Dice: 0.7985, Sensitivity: 0.8991
+2025-11-07 16:25:42,019 | Image 7/11 - Dice: 0.7881, Sensitivity: 0.9155
+2025-11-07 16:25:42,779 | Image 8/11 - Dice: 0.8502, Sensitivity: 0.9226
+2025-11-07 16:25:43,532 | Image 9/11 - Dice: 0.8029, Sensitivity: 0.8934
+2025-11-07 16:25:43,941 | Image 10/11 - Dice: 0.8084, Sensitivity: 0.9354
+2025-11-07 16:25:44,351 | Image 11/11 - Dice: 0.8111, Sensitivity: 0.8895
+2025-11-07 16:25:44,351 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:25:44,351 | Average Dice Coefficient: 0.8019
+2025-11-07 16:25:44,351 | Average IoU (Jaccard): 0.6705
+2025-11-07 16:25:44,351 | Average Accuracy: 0.9694
+2025-11-07 16:25:44,351 | Average Sensitivity (Recall): 0.8947
+2025-11-07 16:25:44,351 | Average Specificity: 0.9750
+2025-11-07 16:25:44,351 | -------------------------------------
+2025-11-07 16:25:44,352 | 
+--- Evaluating Checkpoint: best_model_epoch_2523_val_0.1343.pth ---
+2025-11-07 16:25:44,352 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_2523_val_0.1343.pth
+2025-11-07 16:25:44,482 | Starting test inference with TTA...
+2025-11-07 16:25:50,249 | Image 1/11 - Dice: 0.7807, Sensitivity: 0.8487
+2025-11-07 16:25:56,044 | Image 2/11 - Dice: 0.7843, Sensitivity: 0.8492
+2025-11-07 16:26:01,820 | Image 3/11 - Dice: 0.7537, Sensitivity: 0.8835
+2025-11-07 16:26:07,573 | Image 4/11 - Dice: 0.7856, Sensitivity: 0.8540
+2025-11-07 16:26:13,323 | Image 5/11 - Dice: 0.8673, Sensitivity: 0.9051
+2025-11-07 16:26:13,731 | Image 6/11 - Dice: 0.8124, Sensitivity: 0.8571
+2025-11-07 16:26:14,138 | Image 7/11 - Dice: 0.8069, Sensitivity: 0.8886
+2025-11-07 16:26:14,896 | Image 8/11 - Dice: 0.8481, Sensitivity: 0.9220
+2025-11-07 16:26:15,652 | Image 9/11 - Dice: 0.7962, Sensitivity: 0.8968
+2025-11-07 16:26:16,060 | Image 10/11 - Dice: 0.8168, Sensitivity: 0.8970
+2025-11-07 16:26:16,468 | Image 11/11 - Dice: 0.8234, Sensitivity: 0.8526
+2025-11-07 16:26:16,468 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:26:16,468 | Average Dice Coefficient: 0.8068
+2025-11-07 16:26:16,468 | Average IoU (Jaccard): 0.6773
+2025-11-07 16:26:16,468 | Average Accuracy: 0.9710
+2025-11-07 16:26:16,468 | Average Sensitivity (Recall): 0.8777
+2025-11-07 16:26:16,468 | Average Specificity: 0.9780
+2025-11-07 16:26:16,468 | -------------------------------------
+2025-11-07 16:26:16,470 | 
+--- Evaluating Checkpoint: best_model_epoch_1950_val_0.1353.pth ---
+2025-11-07 16:26:16,470 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1950_val_0.1353.pth
+2025-11-07 16:26:16,602 | Starting test inference with TTA...
+2025-11-07 16:26:22,361 | Image 1/11 - Dice: 0.7763, Sensitivity: 0.8687
+2025-11-07 16:26:28,128 | Image 2/11 - Dice: 0.7771, Sensitivity: 0.8759
+2025-11-07 16:26:33,901 | Image 3/11 - Dice: 0.7408, Sensitivity: 0.9043
+2025-11-07 16:26:39,675 | Image 4/11 - Dice: 0.7819, Sensitivity: 0.8665
+2025-11-07 16:26:45,400 | Image 5/11 - Dice: 0.8590, Sensitivity: 0.9155
+2025-11-07 16:26:45,807 | Image 6/11 - Dice: 0.8049, Sensitivity: 0.8836
+2025-11-07 16:26:46,210 | Image 7/11 - Dice: 0.7977, Sensitivity: 0.9024
+2025-11-07 16:26:46,962 | Image 8/11 - Dice: 0.8506, Sensitivity: 0.9161
+2025-11-07 16:26:47,716 | Image 9/11 - Dice: 0.8073, Sensitivity: 0.8894
+2025-11-07 16:26:48,127 | Image 10/11 - Dice: 0.8105, Sensitivity: 0.9228
+2025-11-07 16:26:48,533 | Image 11/11 - Dice: 0.8152, Sensitivity: 0.8953
+2025-11-07 16:26:48,533 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:26:48,533 | Average Dice Coefficient: 0.8019
+2025-11-07 16:26:48,533 | Average IoU (Jaccard): 0.6706
+2025-11-07 16:26:48,533 | Average Accuracy: 0.9694
+2025-11-07 16:26:48,533 | Average Sensitivity (Recall): 0.8946
+2025-11-07 16:26:48,533 | Average Specificity: 0.9750
+2025-11-07 16:26:48,533 | -------------------------------------
+2025-11-07 16:26:48,535 | 
+--- Evaluating Checkpoint: best_model_epoch_1662_val_0.1359.pth ---
+2025-11-07 16:26:48,535 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1662_val_0.1359.pth
+2025-11-07 16:26:48,665 | Starting test inference with TTA...
+2025-11-07 16:26:54,436 | Image 1/11 - Dice: 0.7820, Sensitivity: 0.8552
+2025-11-07 16:27:00,206 | Image 2/11 - Dice: 0.7822, Sensitivity: 0.8531
+2025-11-07 16:27:05,983 | Image 3/11 - Dice: 0.7561, Sensitivity: 0.8828
+2025-11-07 16:27:11,745 | Image 4/11 - Dice: 0.7870, Sensitivity: 0.8530
+2025-11-07 16:27:17,512 | Image 5/11 - Dice: 0.8638, Sensitivity: 0.9035
+2025-11-07 16:27:17,927 | Image 6/11 - Dice: 0.7998, Sensitivity: 0.8979
+2025-11-07 16:27:18,333 | Image 7/11 - Dice: 0.7907, Sensitivity: 0.9130
+2025-11-07 16:27:19,087 | Image 8/11 - Dice: 0.8518, Sensitivity: 0.9115
+2025-11-07 16:27:19,843 | Image 9/11 - Dice: 0.8083, Sensitivity: 0.8894
+2025-11-07 16:27:20,252 | Image 10/11 - Dice: 0.8069, Sensitivity: 0.9210
+2025-11-07 16:27:20,659 | Image 11/11 - Dice: 0.8181, Sensitivity: 0.8925
+2025-11-07 16:27:20,660 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:27:20,660 | Average Dice Coefficient: 0.8042
+2025-11-07 16:27:20,660 | Average IoU (Jaccard): 0.6736
+2025-11-07 16:27:20,660 | Average Accuracy: 0.9701
+2025-11-07 16:27:20,660 | Average Sensitivity (Recall): 0.8884
+2025-11-07 16:27:20,660 | Average Specificity: 0.9762
+2025-11-07 16:27:20,660 | -------------------------------------
+2025-11-07 16:27:20,661 | 
+--- Evaluating Checkpoint: best_model_epoch_1587_val_0.1363.pth ---
+2025-11-07 16:27:20,661 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1587_val_0.1363.pth
+2025-11-07 16:27:20,789 | Starting test inference with TTA...
+2025-11-07 16:27:26,599 | Image 1/11 - Dice: 0.7763, Sensitivity: 0.8661
+2025-11-07 16:27:32,354 | Image 2/11 - Dice: 0.7788, Sensitivity: 0.8580
+2025-11-07 16:27:38,224 | Image 3/11 - Dice: 0.7562, Sensitivity: 0.8854
+2025-11-07 16:27:44,010 | Image 4/11 - Dice: 0.7836, Sensitivity: 0.8649
+2025-11-07 16:27:49,792 | Image 5/11 - Dice: 0.8627, Sensitivity: 0.9111
+2025-11-07 16:27:50,196 | Image 6/11 - Dice: 0.8114, Sensitivity: 0.8711
+2025-11-07 16:27:50,601 | Image 7/11 - Dice: 0.8035, Sensitivity: 0.8966
+2025-11-07 16:27:51,356 | Image 8/11 - Dice: 0.8522, Sensitivity: 0.9109
+2025-11-07 16:27:52,111 | Image 9/11 - Dice: 0.8073, Sensitivity: 0.8844
+2025-11-07 16:27:52,522 | Image 10/11 - Dice: 0.8158, Sensitivity: 0.8951
+2025-11-07 16:27:52,928 | Image 11/11 - Dice: 0.8150, Sensitivity: 0.8345
+2025-11-07 16:27:52,928 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:27:52,929 | Average Dice Coefficient: 0.8057
+2025-11-07 16:27:52,929 | Average IoU (Jaccard): 0.6757
+2025-11-07 16:27:52,929 | Average Accuracy: 0.9706
+2025-11-07 16:27:52,929 | Average Sensitivity (Recall): 0.8798
+2025-11-07 16:27:52,929 | Average Specificity: 0.9773
+2025-11-07 16:27:52,929 | -------------------------------------
+2025-11-07 16:27:52,930 | 
+--- Evaluating Checkpoint: best_model_epoch_1536_val_0.1364.pth ---
+2025-11-07 16:27:52,930 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1536_val_0.1364.pth
+2025-11-07 16:27:53,062 | Starting test inference with TTA...
+2025-11-07 16:27:58,859 | Image 1/11 - Dice: 0.7808, Sensitivity: 0.8499
+2025-11-07 16:28:04,654 | Image 2/11 - Dice: 0.7833, Sensitivity: 0.8501
+2025-11-07 16:28:10,454 | Image 3/11 - Dice: 0.7635, Sensitivity: 0.8741
+2025-11-07 16:28:16,242 | Image 4/11 - Dice: 0.7883, Sensitivity: 0.8512
+2025-11-07 16:28:22,012 | Image 5/11 - Dice: 0.8688, Sensitivity: 0.8994
+2025-11-07 16:28:22,430 | Image 6/11 - Dice: 0.8100, Sensitivity: 0.8713
+2025-11-07 16:28:22,838 | Image 7/11 - Dice: 0.7993, Sensitivity: 0.9052
+2025-11-07 16:28:23,593 | Image 8/11 - Dice: 0.8518, Sensitivity: 0.9087
+2025-11-07 16:28:24,346 | Image 9/11 - Dice: 0.8117, Sensitivity: 0.8845
+2025-11-07 16:28:24,757 | Image 10/11 - Dice: 0.8053, Sensitivity: 0.9310
+2025-11-07 16:28:25,166 | Image 11/11 - Dice: 0.8157, Sensitivity: 0.8831
+2025-11-07 16:28:25,166 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:28:25,166 | Average Dice Coefficient: 0.8071
+2025-11-07 16:28:25,166 | Average IoU (Jaccard): 0.6777
+2025-11-07 16:28:25,166 | Average Accuracy: 0.9709
+2025-11-07 16:28:25,166 | Average Sensitivity (Recall): 0.8826
+2025-11-07 16:28:25,166 | Average Specificity: 0.9776
+2025-11-07 16:28:25,166 | -------------------------------------
+2025-11-07 16:28:25,168 | 
+--- Evaluating Checkpoint: best_model_epoch_1509_val_0.1366.pth ---
+2025-11-07 16:28:25,168 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1509_val_0.1366.pth
+2025-11-07 16:28:25,350 | Starting test inference with TTA...
+2025-11-07 16:28:31,139 | Image 1/11 - Dice: 0.7810, Sensitivity: 0.8551
+2025-11-07 16:28:36,897 | Image 2/11 - Dice: 0.7810, Sensitivity: 0.8595
+2025-11-07 16:28:42,688 | Image 3/11 - Dice: 0.7583, Sensitivity: 0.8842
+2025-11-07 16:28:48,475 | Image 4/11 - Dice: 0.7870, Sensitivity: 0.8552
+2025-11-07 16:28:54,235 | Image 5/11 - Dice: 0.8667, Sensitivity: 0.9025
+2025-11-07 16:28:54,642 | Image 6/11 - Dice: 0.8136, Sensitivity: 0.8537
+2025-11-07 16:28:55,047 | Image 7/11 - Dice: 0.8052, Sensitivity: 0.8847
+2025-11-07 16:28:55,801 | Image 8/11 - Dice: 0.8448, Sensitivity: 0.9177
+2025-11-07 16:28:56,557 | Image 9/11 - Dice: 0.8023, Sensitivity: 0.8958
+2025-11-07 16:28:56,965 | Image 10/11 - Dice: 0.8095, Sensitivity: 0.9115
+2025-11-07 16:28:57,373 | Image 11/11 - Dice: 0.8165, Sensitivity: 0.8708
+2025-11-07 16:28:57,373 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:28:57,373 | Average Dice Coefficient: 0.8060
+2025-11-07 16:28:57,373 | Average IoU (Jaccard): 0.6760
+2025-11-07 16:28:57,373 | Average Accuracy: 0.9708
+2025-11-07 16:28:57,373 | Average Sensitivity (Recall): 0.8810
+2025-11-07 16:28:57,373 | Average Specificity: 0.9775
+2025-11-07 16:28:57,373 | -------------------------------------
+2025-11-07 16:28:57,374 | 
+--- Evaluating Checkpoint: best_model_epoch_1194_val_0.1368.pth ---
+2025-11-07 16:28:57,374 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_1194_val_0.1368.pth
+2025-11-07 16:28:57,506 | Starting test inference with TTA...
+2025-11-07 16:29:03,277 | Image 1/11 - Dice: 0.7759, Sensitivity: 0.8651
+2025-11-07 16:29:09,072 | Image 2/11 - Dice: 0.7756, Sensitivity: 0.8694
+2025-11-07 16:29:14,840 | Image 3/11 - Dice: 0.7388, Sensitivity: 0.8956
+2025-11-07 16:29:20,598 | Image 4/11 - Dice: 0.7833, Sensitivity: 0.8642
+2025-11-07 16:29:26,377 | Image 5/11 - Dice: 0.8632, Sensitivity: 0.9080
+2025-11-07 16:29:26,784 | Image 6/11 - Dice: 0.7966, Sensitivity: 0.9051
+2025-11-07 16:29:27,191 | Image 7/11 - Dice: 0.7874, Sensitivity: 0.9173
+2025-11-07 16:29:27,943 | Image 8/11 - Dice: 0.8487, Sensitivity: 0.9139
+2025-11-07 16:29:28,695 | Image 9/11 - Dice: 0.8095, Sensitivity: 0.8893
+2025-11-07 16:29:29,103 | Image 10/11 - Dice: 0.7950, Sensitivity: 0.9406
+2025-11-07 16:29:29,511 | Image 11/11 - Dice: 0.8125, Sensitivity: 0.8947
+2025-11-07 16:29:29,511 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:29:29,511 | Average Dice Coefficient: 0.7988
+2025-11-07 16:29:29,511 | Average IoU (Jaccard): 0.6662
+2025-11-07 16:29:29,511 | Average Accuracy: 0.9687
+2025-11-07 16:29:29,511 | Average Sensitivity (Recall): 0.8966
+2025-11-07 16:29:29,511 | Average Specificity: 0.9741
+2025-11-07 16:29:29,511 | -------------------------------------
+2025-11-07 16:29:29,513 | 
+--- Evaluating Checkpoint: best_model_epoch_990_val_0.1382.pth ---
+2025-11-07 16:29:29,513 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_990_val_0.1382.pth
+2025-11-07 16:29:29,641 | Starting test inference with TTA...
+2025-11-07 16:29:35,384 | Image 1/11 - Dice: 0.7738, Sensitivity: 0.8621
+2025-11-07 16:29:41,143 | Image 2/11 - Dice: 0.7797, Sensitivity: 0.8554
+2025-11-07 16:29:46,910 | Image 3/11 - Dice: 0.7597, Sensitivity: 0.8783
+2025-11-07 16:29:52,676 | Image 4/11 - Dice: 0.7834, Sensitivity: 0.8632
+2025-11-07 16:29:58,427 | Image 5/11 - Dice: 0.8653, Sensitivity: 0.9127
+2025-11-07 16:29:58,842 | Image 6/11 - Dice: 0.8095, Sensitivity: 0.8670
+2025-11-07 16:29:59,248 | Image 7/11 - Dice: 0.8052, Sensitivity: 0.8859
+2025-11-07 16:30:00,002 | Image 8/11 - Dice: 0.8465, Sensitivity: 0.9186
+2025-11-07 16:30:00,755 | Image 9/11 - Dice: 0.8060, Sensitivity: 0.8903
+2025-11-07 16:30:01,163 | Image 10/11 - Dice: 0.8052, Sensitivity: 0.9210
+2025-11-07 16:30:01,569 | Image 11/11 - Dice: 0.8100, Sensitivity: 0.8965
+2025-11-07 16:30:01,569 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:30:01,569 | Average Dice Coefficient: 0.8040
+2025-11-07 16:30:01,569 | Average IoU (Jaccard): 0.6733
+2025-11-07 16:30:01,569 | Average Accuracy: 0.9702
+2025-11-07 16:30:01,569 | Average Sensitivity (Recall): 0.8865
+2025-11-07 16:30:01,569 | Average Specificity: 0.9765
+2025-11-07 16:30:01,569 | -------------------------------------
+2025-11-07 16:30:01,570 | 
+--- Evaluating Checkpoint: best_model_epoch_924_val_0.1387.pth ---
+2025-11-07 16:30:01,570 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_924_val_0.1387.pth
+2025-11-07 16:30:01,700 | Starting test inference with TTA...
+2025-11-07 16:30:07,450 | Image 1/11 - Dice: 0.7754, Sensitivity: 0.8687
+2025-11-07 16:30:13,261 | Image 2/11 - Dice: 0.7753, Sensitivity: 0.8713
+2025-11-07 16:30:19,046 | Image 3/11 - Dice: 0.7446, Sensitivity: 0.8930
+2025-11-07 16:30:24,823 | Image 4/11 - Dice: 0.7816, Sensitivity: 0.8643
+2025-11-07 16:30:30,573 | Image 5/11 - Dice: 0.8660, Sensitivity: 0.9168
+2025-11-07 16:30:30,979 | Image 6/11 - Dice: 0.8087, Sensitivity: 0.8668
+2025-11-07 16:30:31,385 | Image 7/11 - Dice: 0.8058, Sensitivity: 0.8879
+2025-11-07 16:30:32,141 | Image 8/11 - Dice: 0.8420, Sensitivity: 0.9210
+2025-11-07 16:30:32,899 | Image 9/11 - Dice: 0.7937, Sensitivity: 0.8956
+2025-11-07 16:30:33,310 | Image 10/11 - Dice: 0.8142, Sensitivity: 0.9024
+2025-11-07 16:30:33,717 | Image 11/11 - Dice: 0.8158, Sensitivity: 0.8837
+2025-11-07 16:30:33,717 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:30:33,717 | Average Dice Coefficient: 0.8021
+2025-11-07 16:30:33,717 | Average IoU (Jaccard): 0.6708
+2025-11-07 16:30:33,717 | Average Accuracy: 0.9697
+2025-11-07 16:30:33,717 | Average Sensitivity (Recall): 0.8883
+2025-11-07 16:30:33,717 | Average Specificity: 0.9758
+2025-11-07 16:30:33,717 | -------------------------------------
+2025-11-07 16:30:33,719 | 
+--- Evaluating Checkpoint: best_model_epoch_651_val_0.1397.pth ---
+2025-11-07 16:30:33,719 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_651_val_0.1397.pth
+2025-11-07 16:30:33,852 | Starting test inference with TTA...
+2025-11-07 16:30:39,621 | Image 1/11 - Dice: 0.7774, Sensitivity: 0.8533
+2025-11-07 16:30:45,406 | Image 2/11 - Dice: 0.7768, Sensitivity: 0.8603
+2025-11-07 16:30:51,199 | Image 3/11 - Dice: 0.7426, Sensitivity: 0.8809
+2025-11-07 16:30:56,966 | Image 4/11 - Dice: 0.7843, Sensitivity: 0.8548
+2025-11-07 16:31:02,694 | Image 5/11 - Dice: 0.8663, Sensitivity: 0.9019
+2025-11-07 16:31:03,102 | Image 6/11 - Dice: 0.7965, Sensitivity: 0.9030
+2025-11-07 16:31:03,508 | Image 7/11 - Dice: 0.7890, Sensitivity: 0.9090
+2025-11-07 16:31:04,261 | Image 8/11 - Dice: 0.8392, Sensitivity: 0.9203
+2025-11-07 16:31:05,016 | Image 9/11 - Dice: 0.8000, Sensitivity: 0.8932
+2025-11-07 16:31:05,425 | Image 10/11 - Dice: 0.8065, Sensitivity: 0.9173
+2025-11-07 16:31:05,832 | Image 11/11 - Dice: 0.8115, Sensitivity: 0.8793
+2025-11-07 16:31:05,832 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:31:05,832 | Average Dice Coefficient: 0.7991
+2025-11-07 16:31:05,832 | Average IoU (Jaccard): 0.6666
+2025-11-07 16:31:05,832 | Average Accuracy: 0.9691
+2025-11-07 16:31:05,832 | Average Sensitivity (Recall): 0.8885
+2025-11-07 16:31:05,832 | Average Specificity: 0.9751
+2025-11-07 16:31:05,832 | -------------------------------------
+2025-11-07 16:31:05,834 | 
+--- Evaluating Checkpoint: best_model_epoch_633_val_0.1400.pth ---
+2025-11-07 16:31:05,834 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_633_val_0.1400.pth
+2025-11-07 16:31:05,969 | Starting test inference with TTA...
+2025-11-07 16:31:11,743 | Image 1/11 - Dice: 0.7757, Sensitivity: 0.8577
+2025-11-07 16:31:17,532 | Image 2/11 - Dice: 0.7777, Sensitivity: 0.8565
+2025-11-07 16:31:23,321 | Image 3/11 - Dice: 0.7581, Sensitivity: 0.8793
+2025-11-07 16:31:29,089 | Image 4/11 - Dice: 0.7848, Sensitivity: 0.8573
+2025-11-07 16:31:34,889 | Image 5/11 - Dice: 0.8690, Sensitivity: 0.9102
+2025-11-07 16:31:35,304 | Image 6/11 - Dice: 0.8068, Sensitivity: 0.8795
+2025-11-07 16:31:35,710 | Image 7/11 - Dice: 0.7999, Sensitivity: 0.8986
+2025-11-07 16:31:36,462 | Image 8/11 - Dice: 0.8400, Sensitivity: 0.9145
+2025-11-07 16:31:37,214 | Image 9/11 - Dice: 0.7997, Sensitivity: 0.8868
+2025-11-07 16:31:37,625 | Image 10/11 - Dice: 0.8044, Sensitivity: 0.9092
+2025-11-07 16:31:38,033 | Image 11/11 - Dice: 0.8140, Sensitivity: 0.8692
+2025-11-07 16:31:38,033 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:31:38,033 | Average Dice Coefficient: 0.8027
+2025-11-07 16:31:38,033 | Average IoU (Jaccard): 0.6715
+2025-11-07 16:31:38,033 | Average Accuracy: 0.9700
+2025-11-07 16:31:38,033 | Average Sensitivity (Recall): 0.8835
+2025-11-07 16:31:38,033 | Average Specificity: 0.9765
+2025-11-07 16:31:38,033 | -------------------------------------
+2025-11-07 16:31:38,035 | 
+--- Evaluating Checkpoint: best_model_epoch_567_val_0.1419.pth ---
+2025-11-07 16:31:38,035 | Loading checkpoint from full_phase_complete_training/checkpoints_HYBRID_4SET/best_model_epoch_567_val_0.1419.pth
+2025-11-07 16:31:38,168 | Starting test inference with TTA...
+2025-11-07 16:31:43,930 | Image 1/11 - Dice: 0.7799, Sensitivity: 0.8329
+2025-11-07 16:31:49,749 | Image 2/11 - Dice: 0.7792, Sensitivity: 0.8356
+2025-11-07 16:31:55,496 | Image 3/11 - Dice: 0.7564, Sensitivity: 0.8480
+2025-11-07 16:32:01,253 | Image 4/11 - Dice: 0.7873, Sensitivity: 0.8358
+2025-11-07 16:32:07,014 | Image 5/11 - Dice: 0.8710, Sensitivity: 0.8825
+2025-11-07 16:32:07,422 | Image 6/11 - Dice: 0.8015, Sensitivity: 0.8914
+2025-11-07 16:32:07,829 | Image 7/11 - Dice: 0.7946, Sensitivity: 0.9032
+2025-11-07 16:32:08,583 | Image 8/11 - Dice: 0.8441, Sensitivity: 0.9060
+2025-11-07 16:32:09,335 | Image 9/11 - Dice: 0.8025, Sensitivity: 0.8761
+2025-11-07 16:32:09,745 | Image 10/11 - Dice: 0.8140, Sensitivity: 0.8886
+2025-11-07 16:32:10,153 | Image 11/11 - Dice: 0.8129, Sensitivity: 0.8131
+2025-11-07 16:32:10,153 | 
+--- FINAL TEST PERFORMANCE REPORT ---
+2025-11-07 16:32:10,153 | Average Dice Coefficient: 0.8040
+2025-11-07 16:32:10,153 | Average IoU (Jaccard): 0.6733
+2025-11-07 16:32:10,153 | Average Accuracy: 0.9708
+2025-11-07 16:32:10,153 | Average Sensitivity (Recall): 0.8648
+2025-11-07 16:32:10,153 | Average Specificity: 0.9786
+2025-11-07 16:32:10,153 | -------------------------------------
+2025-11-07 16:32:10,155 | 
+--- SUMMARY OF ALL TEST RESULTS ---
+2025-11-07 16:32:10,155 | best_model_epoch_3834_val_0.1330.pth: Dice=0.8062, IoU=0.6763, Sensitivity=0.8868
+2025-11-07 16:32:10,155 | best_model_epoch_3216_val_0.1330.pth: Dice=0.8040, IoU=0.6734, Sensitivity=0.8905
+2025-11-07 16:32:10,155 | best_model_epoch_2655_val_0.1338.pth: Dice=0.8019, IoU=0.6705, Sensitivity=0.8947
+2025-11-07 16:32:10,155 | best_model_epoch_2523_val_0.1343.pth: Dice=0.8068, IoU=0.6773, Sensitivity=0.8777
+2025-11-07 16:32:10,155 | best_model_epoch_1950_val_0.1353.pth: Dice=0.8019, IoU=0.6706, Sensitivity=0.8946
+2025-11-07 16:32:10,155 | best_model_epoch_1662_val_0.1359.pth: Dice=0.8042, IoU=0.6736, Sensitivity=0.8884
+2025-11-07 16:32:10,155 | best_model_epoch_1587_val_0.1363.pth: Dice=0.8057, IoU=0.6757, Sensitivity=0.8798
+2025-11-07 16:32:10,155 | best_model_epoch_1536_val_0.1364.pth: Dice=0.8071, IoU=0.6777, Sensitivity=0.8826
+2025-11-07 16:32:10,155 | best_model_epoch_1509_val_0.1366.pth: Dice=0.8060, IoU=0.6760, Sensitivity=0.8810
+2025-11-07 16:32:10,155 | best_model_epoch_1194_val_0.1368.pth: Dice=0.7988, IoU=0.6662, Sensitivity=0.8966
+2025-11-07 16:32:10,155 | best_model_epoch_990_val_0.1382.pth: Dice=0.8040, IoU=0.6733, Sensitivity=0.8865
+2025-11-07 16:32:10,155 | best_model_epoch_924_val_0.1387.pth: Dice=0.8021, IoU=0.6708, Sensitivity=0.8883
+2025-11-07 16:32:10,155 | best_model_epoch_651_val_0.1397.pth: Dice=0.7991, IoU=0.6666, Sensitivity=0.8885
+2025-11-07 16:32:10,155 | best_model_epoch_633_val_0.1400.pth: Dice=0.8027, IoU=0.6715, Sensitivity=0.8835
+2025-11-07 16:32:10,155 | best_model_epoch_567_val_0.1419.pth: Dice=0.8040, IoU=0.6733, Sensitivity=0.8648
