@@ -8,6 +8,14 @@ The Enhanced U²-Net (U²Net-E) targets robust retinal vessel segmentation acros
 - **Checkpoint of record**: `best_model_epoch_3834_val_0.1330.pth`.
 - **Success criteria**: Dice > 0.77 and Sensitivity > 0.84 on a balanced cross-dataset test set.
 
+### Segmentation Pipeline Overview
+
+The following visualization demonstrates the complete segmentation pipeline: input fundus image, enhanced image, predicted vessel mask, and ground truth mask.
+
+![Retinal Vessel Segmentation Pipeline](reports/epoch_3834_total_0.1330_bce_0.0756_dice_0.1904.png)
+
+*Segmentation results at epoch 3834: Total Loss = 0.1330, BCE Loss = 0.0756, Dice Loss = 0.1904*
+
 ## Dataset and Splits
 
 All public datasets were merged, shuffled, and stratified to preserve representation of each source in every subset.
