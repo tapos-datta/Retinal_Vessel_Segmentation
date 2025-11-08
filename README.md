@@ -101,6 +101,28 @@ The metrics below summarize performance on the 11-image balanced test set (epoch
 - **HRF robustness**: High-resolution pathological cases retain Dice up to 0.8649, evidencing the impact of the patch strategy.
 - **Sensitivity vs. specificity**: The enhancement front-end raises vessel recall while keeping specificity at 0.9768.
 
+## Visualizations
+
+### Training Progress
+
+The following visualizations demonstrate the training and validation progress of the U²Net-E model:
+
+#### Loss Curves
+
+**Dice Loss (Train vs Validation)**
+![Dice Loss](reports/DiceLoss_Train_VS_Val.png)
+
+**Dice + BCE Loss (Train vs Validation)**
+![Dice + BCE Loss](reports/Dice+BCE_Train_VS_Val.png)
+
+#### Training Process Videos
+
+**Training Process**
+- [Training Process Video](reports/TrainingProcess.mp4)
+
+**Validation Process**
+- [Validation Process Video](reports/Validation_process.mp4)
+
 ## Conclusions and Future Work
 
 ### Key Takeaways
