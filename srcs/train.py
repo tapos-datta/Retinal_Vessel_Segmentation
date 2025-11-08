@@ -147,11 +147,20 @@ class HybridTrainer:
         os.makedirs(self.cfg.val_visual_dir, exist_ok=True)
 
     def _setup_logging(self) -> None:
+        log_file_path = self.cfg.log_path()
+        
+        # Ensure the log directory exists (redundant but safe)
+        os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+        
+        # Explicitly create the log file if it doesn't exist
+        if not os.path.exists(log_file_path):
+            open(log_file_path, 'w').close()
+        
         logging.basicConfig(
             level=logging.INFO,
             format="%(asctime)s | %(message)s",
             handlers=[
-                logging.FileHandler(self.cfg.log_path(), mode='w'),
+                logging.FileHandler(log_file_path, mode='w'),
                 logging.StreamHandler(),
             ],
             force=True,
