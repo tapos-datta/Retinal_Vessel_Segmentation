@@ -7,6 +7,7 @@ The Enhanced U²-Net (U²Net-E) targets robust retinal vessel segmentation acros
 - **Project goal**: Generalized retinal vessel segmentation across DRIVE, HRF, CHASE_DB1, and STARE.
 - **Checkpoint of record**: `best_model_epoch_3834_val_0.1330.pth`.
 - **Success criteria**: Dice > 0.77 and Sensitivity > 0.84 on a balanced cross-dataset test set.
+- **iOS Demo**: [CoreML-based demo application](https://github.com/tapos-datta/RetinalVesselSegDemo) for real-time vessel segmentation.
 
 ### Segmentation Pipeline Overview
 
@@ -130,6 +131,17 @@ The following visualizations demonstrate the training and validation progress of
 
 **Validation Process**
 - [Validation Process Video](reports/Validation_process.mp4)
+
+## Deployment & Demo
+
+A CoreML-based iOS demo application is available that demonstrates real-time retinal vessel segmentation using the trained U²Net-E model:
+
+🔗 **[Retinal Vessel Segmentation Demo](https://github.com/tapos-datta/RetinalVesselSegDemo)**
+
+The demo application:
+- Converts the best checkpoint (`best_model_epoch_3834_val_0.1330.pth`) to CoreML format
+- Provides real-time vessel segmentation on iOS devices
+- Demonstrates practical deployment of the trained model
 
 ## Conclusions and Future Work
 
