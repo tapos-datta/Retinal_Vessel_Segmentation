@@ -5,6 +5,10 @@ This archive holds the 15 checkpoints used to produce every figure in the
 main variants, on each of the four leave-one-dataset-out folds and on the `all` split used for the
 external FIVES test.
 
+Download it from the repository's
+[Releases](https://github.com/tapos-datta/Retinal_Vessel_Segmentation/releases) page:
+`retinal-vessel-seg-v2-weights-seed1.tar.gz` (66 MB).
+
 ```
 runs/<variant>/<split>/<fold>/seed1/
     best.pt        weights, selected by validation Dice
@@ -35,7 +39,7 @@ trained on measures nothing.
 ```bash
 git clone https://github.com/tapos-datta/Retinal_Vessel_Segmentation
 cd Retinal_Vessel_Segmentation
-tar xzf u2nete-v2-weights-seed1.tar.gz          # creates runs/...
+tar xzf retinal-vessel-seg-v2-weights-seed1.tar.gz   # creates runs/...
 python evaluate.py runs/hybrid_weber/all/all/seed1 --external data/external_FIVES
 ```
 
