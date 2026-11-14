@@ -1,0 +1,97 @@
+{
+  "seed": 1,
+  "tta": true,
+  "threshold": 0.5,
+  "panels": [
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_14L",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.8199810612420333,
+      "precision": 0.7365119196988708,
+      "sensitivity": 0.9247875418478179,
+      "evaluate_py_dice": 0.81996
+    },
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_14L",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.8168190274784843,
+      "precision": 0.7316245669140302,
+      "sensitivity": 0.9244694226894703,
+      "evaluate_py_dice": 0.81682
+    },
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_14L",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.7943687381205502,
+      "precision": 0.6911494304421921,
+      "sensitivity": 0.9338312150636996,
+      "evaluate_py_dice": 0.79437
+    },
+    {
+      "row": "HRF",
+      "image": "15_dr",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.6801399176954732,
+      "precision": 0.6076339357931734,
+      "sensitivity": 0.7722939758135362,
+      "evaluate_py_dice": 0.68005
+    },
+    {
+      "row": "HRF",
+      "image": "15_dr",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.7575849129155523,
+      "precision": 0.700437731920148,
+      "sensitivity": 0.8248855161585765,
+      "evaluate_py_dice": 0.75759
+    },
+    {
+      "row": "HRF",
+      "image": "15_dr",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.7079087371504916,
+      "precision": 0.6547188330850378,
+      "sensitivity": 0.7705052242014168,
+      "evaluate_py_dice": 0.70791
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_test_101_G",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/all/all/seed1/best.pt",
+      "dice": 0.7012944467673314,
+      "precision": 0.9483765665986593,
+      "sensitivity": 0.5563481424741479,
+      "evaluate_py_dice": 0.70131
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_test_101_G",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/all/all/seed1/best.pt",
+      "dice": 0.4691503891942474,
+      "precision": 0.7592198852772467,
+      "sensitivity": 0.33945669420583247,
+      "evaluate_py_dice": 0.46911
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_test_101_G",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/all/all/seed1/best.pt",
+      "dice": 0.525411788386058,
+      "precision": 0.877816388297276,
+      "sensitivity": 0.3749042512447338,
+      "evaluate_py_dice": 0.52556
+    }
+  ]
+}

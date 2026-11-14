@@ -1,0 +1,83 @@
+{
+  "seed": 1,
+  "display_ranges": {
+    "green": [
+      0.0,
+      0.6470588445663452
+    ],
+    "clahe": [
+      0.019607843831181526,
+      0.7333333492279053
+    ],
+    "hybrid": [
+      -1.3829253864288331,
+      1.0834205031394957
+    ],
+    "hybrid_weber": [
+      -1.3802011251449584,
+      0.852804639935493
+    ]
+  },
+  "rows": [
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_14L",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_CHASE_DB1/seed1/best.pt"
+    },
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_14L",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_CHASE_DB1/seed1/best.pt"
+    },
+    {
+      "row": "DRIVE",
+      "image": "39_training",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_DRIVE/seed1/best.pt"
+    },
+    {
+      "row": "DRIVE",
+      "image": "39_training",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_DRIVE/seed1/best.pt"
+    },
+    {
+      "row": "HRF",
+      "image": "15_dr",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_HRF/seed1/best.pt"
+    },
+    {
+      "row": "HRF",
+      "image": "15_dr",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_HRF/seed1/best.pt"
+    },
+    {
+      "row": "STARE",
+      "image": "im0319",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_STARE/seed1/best.pt"
+    },
+    {
+      "row": "STARE",
+      "image": "im0319",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_STARE/seed1/best.pt"
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_test_101_G",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/all/all/seed1/best.pt"
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_test_101_G",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/all/all/seed1/best.pt"
+    }
+  ]
+}

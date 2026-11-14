@@ -1,161 +1,125 @@
-# U²Net-E Retinal Vessel Segmentation
+# U²-Net-E: Cross-Dataset & External Generalization for Retinal Vessel Segmentation (`v2`)
 
-## Overview
+A controlled benchmark and diagnostic study evaluating whether a learnable image-enhancement front-end improves retinal vessel segmentation across unseen datasets and external clinical cohorts.
 
-The Enhanced U²-Net (U²Net-E) targets robust retinal vessel segmentation across heterogeneous imaging datasets. A learnable enhancement front-end standardizes vessel contrast before the nested U-backbone, enabling consistent performance despite differences in resolution, illumination, and pathology.
+> **Looking for the original `v1` prototype or CoreML iOS app?**  
+> The initial prototype (`epoch 3834`, 80/10/10 split) is preserved on the [`v1-legacy`](../../tree/v1-legacy) branch (tag `v1.0`), which also backs the [RetinalVesselSegDemo](https://github.com/tapos-datta/RetinalVesselSegDemo) iOS CoreML demo.
 
-- **Project goal**: Generalized retinal vessel segmentation across DRIVE, HRF, CHASE_DB1, and STARE.
-- **Checkpoint of record**: `best_model_epoch_3834_val_0.1330.pth`.
-- **Success criteria**: Dice > 0.77 and Sensitivity > 0.84 on a balanced cross-dataset test set.
-- **iOS Demo**: [CoreML-based demo application](https://github.com/tapos-datta/RetinalVesselSegDemo) for real-time vessel segmentation.
+**Documentation:** [Methods](docs/METHODS.md) · [Protocol & pre-registered rules](docs/PROTOCOL.md) · [Results](docs/RESULTS.md) · [Data](docs/DATA.md) · [Weights](docs/WEIGHTS.md) · [Reproducibility](docs/REPRODUCIBILITY.md)
 
-### Segmentation Pipeline Overview
+---
 
-The following visualization demonstrates the complete segmentation pipeline: input fundus image, enhanced image, predicted vessel mask, and ground truth mask.
+## Key Findings
 
-![Retinal Vessel Segmentation Pipeline](reports/epoch_3834_total_0.1330_bce_0.0756_dice_0.1904.png)
+1. **Benchmark (LODO) generalization does not guarantee external generalization.**  
+   On 4-fold Leave-One-Dataset-Out (LODO) testing across **HRF, CHASE_DB1, DRIVE, and STARE** (113 images, 3 seeds), the original learned enhancement (`hybrid`) improves Dice by **+0.016** over no enhancement (`rgb`) and resists calibrated synthetic degradations (+0.035 vs. `rgb`). On the external **FIVES** dataset (792 images), however, `hybrid` **loses −0.030 Dice** (`0.740` vs. `0.771` for both `rgb` and `clahe`), in every seed, on about 76% of the images.
+2. **Why the external gap happens.**  
+   Every model predicts FIVES vessels ~30% thinner than FIVES ground-truth labels (a shared labelling-convention effect), while `hybrid`'s extra deficit comes from missed vessels—not brightness, bright optic disc, contrast, or noise.
+3. **Nothing available before the external test predicted it.**  
+   Three substitutes were tried and all three pointed the wrong way: LODO testing, calibrated degradation (whose model ranking is the *reverse* of FIVES), and input-distribution alignment—under `hybrid` the FIVES background distribution sits *among* the training datasets, the closest alignment of any representation tested, and `hybrid` is still the worst model on FIVES.
+4. **Multi-scale Weber normalization (`hybrid_weber`) closes the external deficit without reliably surpassing `rgb`.**  
+   Replacing per-patch min-max with multi-scale Weber normalization raises FIVES Dice to **0.7815** (vs. `rgb` **0.7706**) and LODO Dice to **0.7894** (vs. `rgb` **0.7851**), meeting all pre-registered confirmation rules (C1–C3). Paired per-image tests qualify this: the FIVES direction reverses in seed 2 (`p = 6e-41`), and the 3-seed LODO per-image median difference vs. `rgb` is `-0.0015` (`p = 0.66`). Its LODO parity rests on three STARE images where `rgb` partly fails, its FIVES advantage grows with image brightness so the darkest quarter is still lost, and the mechanism is a **thicker predicted vessel rather than better detection**. Because FIVES informed the design, `hybrid_weber` requires validation on a fresh external cohort.
 
-*Segmentation results at epoch 3834: Total Loss = 0.1330, BCE Loss = 0.0756, Dice Loss = 0.1904*
+| Variant | LODO Mean (3 seeds) | External FIVES (3 seeds) | Calibrated Degradation (`fives` Δ) |
+| :--- | :---: | :---: | :---: |
+| **`hybrid`** *(original enhancement)* | **0.7969** | 0.7401 | −0.0253 |
+| **`enh3`** *(EnhancementV3)* | 0.7938 | 0.7642 | −0.0306 |
+| **`hybrid_weber`** *(final model)* | 0.7894 | **0.7815** | **−0.0105** |
+| **`rgb`** *(no enhancement)* | 0.7851 | 0.7706 | −0.0395 |
+| **`clahe`** *(classic CLAHE)* | 0.7791 | 0.7706 | −0.0329 |
 
-## Dataset and Splits
+*Full per-dataset tables, diagnostics, hypotheses (H1–H10), and limitations: see [docs/RESULTS.md](docs/RESULTS.md).*
 
-All public datasets were merged, shuffled, and stratified to preserve representation of each source in every subset.
+---
 
-| Dataset | Total Images | Train | Val | Test |
-| --- | --- | --- | --- | --- |
-| DRIVE | 20 | 16 | 2 | 2 |
-| HRF | 45 | 36 | 4 | 5 |
-| CHASE_DB1 | 28 | 22 | 3 | 3 |
-| STARE | 20 | 16 | 2 | 2 |
+## Research Progression: From `v1` Prototype to `v2` Controlled Study
 
-- **Global split**: 80 % / 10 % / 10 % (train/val/test) with batch sampling across datasets.
-- **Held-out evaluation**: 11-image balanced test set spanning all four datasets.
+`v1` demonstrated end-to-end U²-Net-E training, cross-dataset patch sampling, and real-time CoreML deployment. Before scaling the study, `v2` audited `v1` (`run1`/`run2`) and corrected the following methodological oversights:
 
-## Methodology: Multi-Scale and Patch-Based Training
+| Topic | `v1` Prototype (`v1-legacy`) | Audit Finding | `v2` Standard (`main`) |
+| :--- | :--- | :--- | :--- |
+| **Test split framing** | Called the 11-image 80/10/10 split a *"cross-domain test set"* | Test images came from the same 4 training datasets; DRIVE images came from DRIVE's training split. | Renamed to **held-out multi-source split** (`splits/legacy.json`); unseen-domain testing uses **4-fold LODO** (113 images) and **external FIVES** (792 images). |
+| **HRF & peak claims** | Highlighted `0.8649` on HRF (`15_h`) as *"pathological robustness"* | `15_h` is a single healthy image; pathological HRF cases in the same table scored `0.766`–`0.784`. | Reports full per-dataset means across all 45 HRF images (LODO HRF mean **0.807**). |
+| **Metric scope** | Whole-image Accuracy (`0.9705`) and Specificity (`0.9768`) | Scoring black pixels outside the retina inflated Accuracy and Specificity. | All losses and metrics are computed **strictly inside the FOV mask** at native resolution. |
+| **Inference & output** | Side output `d1` + per-image probability min-max rescaling before 0.5 threshold | Per-image stretching alters the effective operating threshold per image. | Uses **fused output (`d0`)** with 8-fold TTA, Gaussian sliding-window blending, and direct 0.5 thresholding. |
+| **Enhancement claim** | *"Enhancement universally improves generalization"* | Holds on LODO and synthetic degradation, but reverses on external FIVES (`-0.030` Dice). | Evaluates both LODO and external FIVES, diagnoses failure modes, and tests `hybrid_weber` across 3 seeds. |
 
-### 2.1 Model Architecture (U²-Net-E)
+The U²-Net backbone and original enhancement module (`u2nete/models/`) are kept unchanged from `v1` so comparisons are exact; `EnhancementV2.py` and `EnhancementV3.py` implement the redesigned front-ends. Architecture details and equations: [docs/METHODS.md](docs/METHODS.md).
 
-The U²-Net-E is designed for fine-grained feature capture, which is essential for segmenting thin capillaries:
+---
 
-- **Backbone**: U²-Net-lite, a nested U-structure using Residual U-blocks (RSU) to effectively fuse multi-scale information.
-- **Enhancement module (hybrid mode)**: Combines green-channel emphasis with per-image min-max stretching, deep residual CNN enhancement, and learnable adaptive contrast correction to boost vessel contrast and reduce domain shift across the four input datasets.
+## Quickstart
 
-### 2.2 Patch-Based Strategy for HRF Complexity
+```bash
+# 1. Environment  (Python >= 3.10)
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+# optional: make `import u2nete` work from any directory
+pip install -e .
 
-The HRF dataset is the most challenging component of the cohort due to its high resolution (up to 3504 × 2336 pixels) and inclusion of images from diabetic retinopathy and glaucoma patients.
+# 2. Prepare pooled datasets & splits (HRF, CHASE_DB1, DRIVE, STARE)
+python prepare_data.py --src <path/to/core_datasets> --out data/pool
+python make_splits.py
 
-To overcome the difficulty of training on massive high-resolution images and to ensure the model learns generalized features, a patch-based training strategy was implemented:
+# 3. Train a single fold or run an experiment plan
+python train.py --config configs/variants/hybrid_weber.json --split splits/lodo.json --fold 2 --seed 1
+python run_experiments.py --plan stage6b --dry-run
 
-- **Local feature focus**: Random sub-region patches force the network to learn intricate vessel textures independent of global context, supporting high sensitivity on high-resolution data.
-- **Domain invariance**: Every batch mixes patches drawn from DRIVE, HRF, CHASE_DB1, and STARE, compelling the model to learn dataset-agnostic filters that remain robust under domain shift.
-- **Data augmentation**: Patch extraction multiplies the number of unique training samples, exposing the network to fine-grained pathological variations present in all datasets.
+# 4. Evaluate on external FIVES & aggregate results
+python evaluate.py runs/hybrid_weber/all/all/seed1 --external data/external_FIVES
+python aggregate.py --ref rgb
+```
 
-### 2.3 Evaluation Protocol
+For full reproduction commands (all stages, diagnostics, and figure scripts), see [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
 
-- **Validation metrics** are computed on the unified cohort’s dedicated validation split during training (checkpoint epoch 3834).
-- **Generalized test metrics** are measured on the 11-image balanced test set drawn from all four datasets with test-time augmentation (TTA) during inference.
+---
 
-### 2.4 Training Configuration
+## Repository Layout
 
-| Parameter | Value |
-| --- | --- |
-| Optimizer | Adam |
-| Learning rate | 3 × 10⁻⁴ |
-| Batch size | 6 |
-| Patch size | 384 × 384 |
-| Total epochs | ~4000 |
-| Loss | BCE + Tversky (α = 0.3, β = 0.7) |
-| Augmentation | Rotation, flip, brightness adjustment, blur, noise |
-| Test-time augmentation | 8-fold averaging |
+```
+u2nete/              model code: U²-Net-lite backbone and the enhancement front-ends
+configs/variants/    one JSON per variant; a variant is a config, not a code branch
+splits/              LODO, cv5, legacy and all splits (fixed split seed 0)
+data/pool/           metadata.csv only; images are not distributed
+results/             per-image CSVs and summary tables for every test
+figures/             generated figures with their captions and the values behind them
+docs/                METHODS, PROTOCOL, RESULTS, DATA, REPRODUCIBILITY
+*.py                 training, evaluation, diagnostics and figure scripts
+```
 
-## Evaluation Protocol
+What is **not** in this repository: raw images, trained weights, cached probability maps, and the
+project's internal running notes (decision log, protocol source and manuscript drafts). The public
+documentation in `docs/` is written from those internal files.
 
-1. **Validation set** drawn from the unified cohort monitors training progress (metrics at epoch 3834).
-2. **Cross-domain test set** of 11 images measures generalization; inference uses test-time augmentation.
-3. **Metric suite** includes Dice, IoU, Accuracy, Sensitivity, and Specificity.
+---
 
-## Results
+## Data & Pretrained Checkpoints (Author Approval Required)
 
-### Balanced Test-Set Metrics at Epoch 3834
+Raw datasets and `.pt` checkpoints are excluded from Git (only `data/pool/metadata.csv`, `splits/`, `configs/`, and summary tables are tracked).
 
-The metrics below summarize performance on the 11-image balanced test set (epoch 3834 checkpoint). Aggregate scores are complemented by per-image means to highlight cross-domain consistency.
+1. **Rebuild from public sources:** Download DRIVE, HRF, CHASE_DB1, STARE, and FIVES from their official distributions and run `prepare_data.py` + `make_splits.py` (see [docs/DATA.md](docs/DATA.md) for sources and terms, and [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for commands). `data/pool/MANIFEST.sha256` and `data/external_FIVES/MANIFEST.sha256` let you confirm that your rebuild matches the one used here, file by file.
+2. **Weights:** a curated subset of checkpoints is published as a release rather than in Git ([docs/WEIGHTS.md](docs/WEIGHTS.md)). They are for research use under the same restrictions as the training data; the Apache 2.0 licence does not extend to them.
+3. **Images:** several of the datasets do not permit redistribution, including of the converted copies in `data/pool`, so those cannot be shared on request. Open an issue if you need help with the preparation step.
 
-| Metric | Value | Notes |
-| --- | --- | --- |
-| Dice (global) | 0.8062 | Calculated over the combined mask of the full test set |
-| Dice (per-image mean) | 0.7880 | Arithmetic mean of Dice scores across the 11 images |
-| IoU (global) | 0.6763 | Intersection over Union on the combined mask |
-| IoU (per-image mean) | 0.6502 | Arithmetic mean of IoU values per image |
-| Accuracy | 0.9705 | Pixel-wise accuracy over the full test set |
-| Sensitivity (global) | 0.8868 | True positive rate for vessels (combined mask) |
-| Sensitivity (per-image mean) | 0.8689 | Arithmetic mean of sensitivities per image |
-| Specificity | 0.9768 | True negative rate for background |
+---
 
-### Per-Image Generalization Snapshot
+## Limitations in Brief
 
-| Image (Dataset) | Dice | Sensitivity |
-| --- | --- | --- |
-| `13_g.jpg` (HRF – Glaucoma) | 0.7792 | 0.8612 |
-| `14_dr.JPG` (HRF – DR) | 0.7844 | 0.8504 |
-| `15_dr.JPG` (HRF – DR) | 0.7663 | 0.8767 |
-| `15_h.jpg` (HRF – Healthy) | 0.8649 | 0.9114 |
-| `39_training.tif` (DRIVE) | 0.8047 | 0.8886 |
-| `Image_14L.jpg` (CHASE_DB1) | 0.8535 | 0.9115 |
-| `im0319.ppm` (STARE) | 0.8108 | 0.9170 |
-| *(additional four images omitted for brevity)* |  |  |
+- **One external dataset.** "External" means FIVES: one clinic, one camera. FIVES also informed the design of `EnhancementV3` and the stage 6 ablation, so FIVES results after stage 3 are exploratory and `hybrid_weber` has not been tested on a truly independent cohort.
+- **Small training pool.** 113 images from four public datasets; DRIVE and STARE contribute 20 each.
+- **Seed variability.** Three seeds support the pre-registered mean checks, but seed 2's FIVES reversal shows run-to-run variance is not negligible.
+- **No clinical claim.** These are benchmark and public-dataset segmentation metrics. Nothing here establishes clinical performance.
 
-### Discussion
+The full list, with what was done about each, is in [docs/RESULTS.md](docs/RESULTS.md) §5.
 
-- **Generalization achieved**: Both global and per-image averages exceed the success criteria, confirming robustness on the balanced test set.
-- **HRF robustness**: High-resolution pathological cases retain Dice up to 0.8649, evidencing the impact of the patch strategy.
-- **Sensitivity vs. specificity**: The enhancement front-end raises vessel recall while keeping specificity at 0.9768.
+---
 
-## Visualizations
+## Citing and Licence
 
-### Training Progress
+Code and documentation are released under the [Apache License 2.0](LICENSE); see
+[NOTICE](NOTICE) for scope and attribution. The datasets are **not** covered by it; see
+[docs/DATA.md](docs/DATA.md). Citation metadata is in [`CITATION.cff`](CITATION.cff).
 
-The following visualizations demonstrate the training and validation progress of the U²Net-E model:
-
-#### Loss Curves
-
-**Dice Loss (Train vs Validation)**
-![Dice Loss](reports/DiceLoss_Train_VS_Val.png)
-
-**Dice + BCE Loss (Train vs Validation)**
-![Dice + BCE Loss](reports/Dice+BCE_Train_VS_Val.png)
-
-#### Training Process Videos
-
-**Training Process**
-- [Training Process Video](reports/TrainingProcess.mp4)
-
-**Validation Process**
-- [Validation Process Video](reports/Validation_process.mp4)
-
-## Deployment & Demo
-
-A CoreML-based iOS demo application is available that demonstrates real-time retinal vessel segmentation using the trained U²Net-E model:
-
-🔗 **[Retinal Vessel Segmentation Demo](https://github.com/tapos-datta/RetinalVesselSegDemo)**
-
-The demo application:
-- Converts the best checkpoint (`best_model_epoch_3834_val_0.1330.pth`) to CoreML format
-- Provides real-time vessel segmentation on iOS devices
-- Demonstrates practical deployment of the trained model
-
-## Conclusions and Future Work
-
-### Key Takeaways
-
-- Unified multi-dataset training paired with patch sampling yields domain-robust vessel segmentation.
-- The learnable enhancement module generalizes contrast normalization across acquisition conditions.
-- U²Net-E matches or exceeds single-dataset baselines despite broader domain coverage.
-
-### Planned Extensions
-
-1. **Precision refinement**: Adjust loss terms to further penalize false positives and push Dice beyond 0.80.
-2. **Deployment optimization**: Profile runtime and memory footprint for low-resource clinical devices.
-3. **Dataset-wise reporting**: Produce per-dataset test summaries and literature comparisons as a dedicated study.
-4. **Ablation studies**: Compare U²Net-E against vanilla U²-Net to quantify enhancement gains.
-
-
+<!--## Future Work (Part 2)-->
+<!---->
+<!--Inspired by the labelling-convention and domain-shift findings in `v2`, Part 2 explores **federated learning across datasets as simulated hospitals** (using Flower with FedAvg, FedProx, FedBN, and a local labelling-style head) to address inter-clinic annotation differences without centralizing patient data.-->

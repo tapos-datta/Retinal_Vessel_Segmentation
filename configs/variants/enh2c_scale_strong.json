@@ -1,0 +1,1 @@
+{"extends": "enh2_scale_strong.json", "_note": "EnhancementV2 + consistency loss: two colour/illumination versions of each patch must enhance to the same image.", "loss": {"consistency_weight": 0.5}}

@@ -1,0 +1,1 @@
+{"extends": "./enh3.json", "_note": "EnhancementV3 at native resolution + photometric enhancement-consistency loss.", "loss": {"consistency_weight": 0.25}}

@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Control for the tile fix: same FOV normalization, no learnable enhancement.", "model": {"enhancement": "rgb"}, "data": {"scale_norm": true, "fov_norm": true}, "augment": {"photometric": "strong"}}

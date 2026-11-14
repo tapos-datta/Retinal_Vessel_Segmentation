@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Original module at original resolution with strong (domain-randomization) augmentation: isolates the effect of augmentation from scale normalization.", "model": {"enhancement": "hybrid"}, "augment": {"photometric": "strong"}}

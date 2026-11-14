@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Hybrid + scale normalization + domain-randomization augmentation (proposed full method).", "model": {"enhancement": "hybrid"}, "data": {"scale_norm": true}, "augment": {"photometric": "strong"}}

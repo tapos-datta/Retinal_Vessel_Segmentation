@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Classic fixed enhancement: CLAHE on the green channel.", "data": {"preprocess": "clahe"}, "model": {"enhancement": "rgb"}}

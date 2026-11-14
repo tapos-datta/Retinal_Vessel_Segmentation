@@ -1,0 +1,1 @@
+{"extends": "./hybrid.json", "_note": "Stage 6: hybrid with a fixed floor of 0.05 added to the per-patch min-max denominator (less stretch of dark, low-range patches).", "model": {"enhancement": "hybrid", "ablation": {"floor": 0.05}}}

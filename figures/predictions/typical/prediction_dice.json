@@ -1,0 +1,157 @@
+{
+  "seed": 1,
+  "tta": true,
+  "threshold": 0.5,
+  "panels": [
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_02R",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.7911223715484426,
+      "precision": 0.7434845645178401,
+      "sensitivity": 0.8452827660144734,
+      "evaluate_py_dice": 0.79115
+    },
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_02R",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.8065718520387247,
+      "precision": 0.7618156907130518,
+      "sensitivity": 0.8569150361833289,
+      "evaluate_py_dice": 0.80657
+    },
+    {
+      "row": "CHASE_DB1",
+      "image": "Image_02R",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_CHASE_DB1/seed1/best.pt",
+      "dice": 0.780174892189746,
+      "precision": 0.7053173056097033,
+      "sensitivity": 0.8728088984186545,
+      "evaluate_py_dice": 0.78017
+    },
+    {
+      "row": "DRIVE",
+      "image": "22_training",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_DRIVE/seed1/best.pt",
+      "dice": 0.7896233382570162,
+      "precision": 0.8778274970236873,
+      "sensitivity": 0.7175262575081374,
+      "evaluate_py_dice": 0.78962
+    },
+    {
+      "row": "DRIVE",
+      "image": "22_training",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_DRIVE/seed1/best.pt",
+      "dice": 0.7632241813602015,
+      "precision": 0.903067540923472,
+      "sensitivity": 0.6608838629576189,
+      "evaluate_py_dice": 0.76325
+    },
+    {
+      "row": "DRIVE",
+      "image": "22_training",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_DRIVE/seed1/best.pt",
+      "dice": 0.7749258498745152,
+      "precision": 0.8940118447027857,
+      "sensitivity": 0.6838361128821181,
+      "evaluate_py_dice": 0.77493
+    },
+    {
+      "row": "HRF",
+      "image": "04_dr",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.7603211522553647,
+      "precision": 0.6909241411513339,
+      "sensitivity": 0.8452152990992512,
+      "evaluate_py_dice": 0.76028
+    },
+    {
+      "row": "HRF",
+      "image": "04_dr",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.7917134030441987,
+      "precision": 0.7352804761304016,
+      "sensitivity": 0.8575289232773151,
+      "evaluate_py_dice": 0.79171
+    },
+    {
+      "row": "HRF",
+      "image": "04_dr",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_HRF/seed1/best.pt",
+      "dice": 0.738043696773874,
+      "precision": 0.6695441185799167,
+      "sensitivity": 0.8221567341957847,
+      "evaluate_py_dice": 0.73806
+    },
+    {
+      "row": "STARE",
+      "image": "im0235",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/lodo/lodo_STARE/seed1/best.pt",
+      "dice": 0.8521718319971282,
+      "precision": 0.7762977174126316,
+      "sensitivity": 0.9444842311875017,
+      "evaluate_py_dice": 0.85217
+    },
+    {
+      "row": "STARE",
+      "image": "im0235",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/lodo/lodo_STARE/seed1/best.pt",
+      "dice": 0.8284958013873677,
+      "precision": 0.7269305463791619,
+      "sensitivity": 0.9630513779475346,
+      "evaluate_py_dice": 0.82849
+    },
+    {
+      "row": "STARE",
+      "image": "im0235",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/lodo/lodo_STARE/seed1/best.pt",
+      "dice": 0.8234607659421672,
+      "precision": 0.7136216889027189,
+      "sensitivity": 0.9732633086655527,
+      "evaluate_py_dice": 0.82346
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_train_473_N",
+      "variant": "rgb",
+      "checkpoint": "runs/rgb/all/all/seed1/best.pt",
+      "dice": 0.8144303735007278,
+      "precision": 0.9867786665072363,
+      "sensitivity": 0.6933343335083639,
+      "evaluate_py_dice": 0.81442
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_train_473_N",
+      "variant": "hybrid",
+      "checkpoint": "runs/hybrid/all/all/seed1/best.pt",
+      "dice": 0.7862298341542772,
+      "precision": 0.9887747215276199,
+      "sensitivity": 0.6525571975095642,
+      "evaluate_py_dice": 0.78622
+    },
+    {
+      "row": "FIVES",
+      "image": "FIVES_train_473_N",
+      "variant": "hybrid_weber",
+      "checkpoint": "runs/hybrid_weber/all/all/seed1/best.pt",
+      "dice": 0.8411144202595588,
+      "precision": 0.9858555629945713,
+      "sensitivity": 0.7334333508363964,
+      "evaluate_py_dice": 0.84112
+    }
+  ]
+}

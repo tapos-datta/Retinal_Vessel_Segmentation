@@ -1,0 +1,1 @@
+{"extends": "./enh3.json", "_note": "EnhancementV3 monochrome ablation ('mono'): same outlier-clipped Weber normalization + dilated residual CNN at native resolution, triplicated [enh, enh, enh] without Red/raw fusion.", "model": {"enh3": {"fusion": "mono"}}}

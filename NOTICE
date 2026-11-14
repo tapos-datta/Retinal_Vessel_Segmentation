@@ -1,0 +1,30 @@
+U2NetE_Research
+Copyright 2026 Tapos Datta
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+---
+
+SCOPE OF THIS LICENCE
+
+The licence covers the source code and documentation in this repository only.
+
+The fundus image datasets used in this study (DRIVE, STARE, CHASE_DB1, HRF and
+FIVES) are NOT distributed here and are NOT covered by it. Each is released by
+its own authors under its own terms; see docs/DATA.md. Obtain each dataset from
+its official source and comply with its licence.
+
+Trained model weights derived from those datasets are likewise not distributed
+in this repository. A curated subset is published as a release; because it was
+trained on research-use datasets, that subset is for research use under the same
+restrictions as the training data, and this licence does not extend to it.
+
+---
+
+THIRD-PARTY WORK BUILT UPON
+
+The segmentation backbone follows the lightweight U2-Net architecture of
+Qin et al., "U2-Net: Going Deeper with Nested U-Structure for Salient Object
+Detection", Pattern Recognition, 2020. The implementation in u2nete/models/ was
+written for this project; see docs/METHODS.md for what was reused and what was
+changed.

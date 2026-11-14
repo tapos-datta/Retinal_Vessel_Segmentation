@@ -1,0 +1,50 @@
+{
+  "data": {
+    "pool": "data/pool",
+    "patch_size": 384,
+    "preprocess": "rgb",
+    "scale_norm": false,
+    "target_fov": 960,
+    "full_image_prob": 0.0,
+    "balance_datasets": true
+  },
+  "augment": {
+    "photometric": "basic",
+    "rotate_deg": 20,
+    "scale_range": [
+      0.8,
+      1.25
+    ]
+  },
+  "model": {
+    "enhancement": "hybrid",
+    "imagenet_norm": false,
+    "output": "fused"
+  },
+  "loss": {
+    "w_bce": 0.5,
+    "w_tversky": 0.5,
+    "tversky_alpha": 0.3,
+    "tversky_beta": 0.7,
+    "fov_only": true
+  },
+  "train": {
+    "device": "auto",
+    "batch_size": 8,
+    "iterations": 12000,
+    "lr": 0.0003,
+    "weight_decay": 1e-05,
+    "warmup": 500,
+    "val_every": 1000,
+    "patience": 6,
+    "workers": 4,
+    "log_every": 100
+  },
+  "inference": {
+    "overlap": 96,
+    "batch": 8,
+    "threshold": 0.5,
+    "tta_test": true
+  },
+  "_note": "Learnable hybrid enhancement (U2-Net-E) with the cleaned-up training recipe."
+}

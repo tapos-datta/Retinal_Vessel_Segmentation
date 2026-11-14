@@ -1,7 +1,7 @@
-torch>=2.1
-numpy>=1.24
-matplotlib>=3.7
-scikit-learn>=1.3
-scikit-image>=0.21
-opencv-python-headless>=4.8
-
+torch>=2.3  # on an NVIDIA server install the CUDA build first (see README)
+numpy>=1.26
+opencv-python-headless>=4.9  # headless: no GUI libraries needed (works on servers)
+scikit-image>=0.22
+scipy>=1.11
+pillow>=10
+matplotlib>=3.8

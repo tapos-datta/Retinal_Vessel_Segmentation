@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Control: full method with CLAHE instead of the learnable module.", "data": {"preprocess": "clahe", "scale_norm": true}, "model": {"enhancement": "rgb"}, "augment": {"photometric": "strong"}}

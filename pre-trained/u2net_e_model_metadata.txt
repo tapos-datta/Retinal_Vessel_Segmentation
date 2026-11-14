@@ -1,5 +1,0 @@
-Checkpoint Metadata:
-==================================================
-Epoch: 3834
-Total Loss: 0.133021
-Optimizer state: Included in original checkpoint

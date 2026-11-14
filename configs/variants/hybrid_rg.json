@@ -1,0 +1,1 @@
+{"extends": "./hybrid.json", "_note": "Stage 6: hybrid with raw green and red fed to the backbone next to the enhanced channel ([enhanced, green, red]).", "model": {"enhancement": "hybrid", "ablation": {"raw_rg": true}}}

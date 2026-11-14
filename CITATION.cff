@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: >-
+  U²-Net-E: Benchmark generalization is not external generalization — a
+  controlled study of learned image enhancement for retinal vessel segmentation
+message: If you use this code or these results, please cite this repository.
+type: software
+authors:
+  - family-names: Datta
+    given-names: Tapos
+repository-code: "https://github.com/tapos-datta/U2NetE_Research"
+abstract: >-
+  A controlled study of a learnable image-enhancement front-end placed before a
+  U²-Net-lite retinal vessel segmenter. The backbone, training recipe and
+  evaluation protocol are held fixed and only the input front-end changes.
+  Models are trained on 113 images from HRF, CHASE_DB1, DRIVE and STARE and
+  evaluated by leave-one-dataset-out testing and once on the external FIVES
+  dataset (792 scorable images). The learned front-end gains on the benchmark
+  and loses on the external set; diagnostic tests separate a shared
+  labelling-convention effect from the module's own deficit, and a multi-scale
+  Weber normalization removes that deficit without reliably surpassing no
+  enhancement. Every decision stage was preceded by a written pass mark.
+keywords:
+  - retinal vessel segmentation
+  - domain generalization
+  - external validation
+  - image enhancement
+  - leave-one-dataset-out
+  - Weber contrast
+  - U-Net
+  - FIVES
+license: Apache-2.0
+version: "2.0"
+date-released: "2026-11-14"

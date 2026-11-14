@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "u2nete"
+version = "2.0.0"
+description = "Learned image-enhancement front-ends for retinal vessel segmentation, with cross-dataset and external evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Tapos Datta" }]
+keywords = [
+    "retinal vessel segmentation",
+    "domain generalization",
+    "external validation",
+    "image enhancement",
+    "leave-one-dataset-out",
+    "U-Net",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+# Kept in step with requirements.txt, which stays the canonical list for a plain
+# `pip install -r requirements.txt` on a machine where the CUDA build of torch is
+# installed first.
+dependencies = [
+    "torch>=2.3",
+    "numpy>=1.26",
+    "opencv-python-headless>=4.9",
+    "scikit-image>=0.22",
+    "scipy>=1.11",
+    "pillow>=10",
+    "matplotlib>=3.8",
+]
+
+[project.urls]
+Repository = "https://github.com/tapos-datta/U2NetE_Research"
+
+# Only the library is packaged. The scripts in the repository root are entry
+# points that are run in place (see docs/REPRODUCIBILITY.md); they are not
+# installed, so that `python train.py ...` keeps working exactly as documented.
+[tool.setuptools]
+packages = ["u2nete", "u2nete.models"]

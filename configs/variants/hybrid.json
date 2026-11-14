@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Learnable hybrid enhancement (U2-Net-E) with the cleaned-up training recipe.", "model": {"enhancement": "hybrid"}}

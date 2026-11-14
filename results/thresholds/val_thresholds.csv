@@ -1,0 +1,17 @@
+variant,fold,seed,threshold
+hybrid,lodo_CHASE_DB1,seed1,0.55
+hybrid,lodo_DRIVE,seed1,0.75
+hybrid,lodo_HRF,seed1,0.55
+hybrid,lodo_STARE,seed1,0.55
+rgb,lodo_CHASE_DB1,seed1,0.6
+rgb,lodo_DRIVE,seed1,0.8
+rgb,lodo_HRF,seed1,0.55
+rgb,lodo_STARE,seed1,0.55
+clahe,lodo_CHASE_DB1,seed1,0.6
+clahe,lodo_DRIVE,seed1,0.8
+clahe,lodo_HRF,seed1,0.5
+clahe,lodo_STARE,seed1,0.55
+enh3,lodo_CHASE_DB1,seed1,0.6
+enh3,lodo_DRIVE,seed1,0.8
+enh3,lodo_HRF,seed1,0.6
+enh3,lodo_STARE,seed1,0.5

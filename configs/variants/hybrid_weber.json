@@ -1,0 +1,1 @@
+{"extends": "./hybrid.json", "_note": "Stage 6: hybrid with the per-patch min-max replaced by multi-scale Weber normalization (V3's, without eye mask, outlier cap or noise floor).", "model": {"enhancement": "hybrid", "ablation": {"norm": "weber", "weber_sigmas": [16.0, 48.0, 128.0], "weber_gain": 4.0}}}

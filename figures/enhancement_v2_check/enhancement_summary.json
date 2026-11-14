@@ -1,0 +1,48 @@
+{
+  "checkpoint": "runs_check/enh2c_scale_strong/lodo/lodo_STARE/seed1/best.pt",
+  "learned_contrast": {
+    "colour_mix_rgb": [
+      0.071,
+      0.849,
+      0.079
+    ],
+    "illum_sigma_px": 45.1,
+    "retinex_gain": 3.842
+  },
+  "n_images": 113,
+  "representations": {
+    "green": {
+      "dataset_gap": 0.661,
+      "cnr_by_dataset": {
+        "CHASE_DB1": 0.136,
+        "DRIVE": 0.434,
+        "HRF": 0.207,
+        "STARE": 0.376
+      },
+      "cnr_mean": 0.289,
+      "cnr_spread_between_datasets": 0.42
+    },
+    "clahe": {
+      "dataset_gap": 0.563,
+      "cnr_by_dataset": {
+        "CHASE_DB1": 0.628,
+        "DRIVE": 0.95,
+        "HRF": 0.607,
+        "STARE": 0.9
+      },
+      "cnr_mean": 0.771,
+      "cnr_spread_between_datasets": 0.201
+    },
+    "enhanced": {
+      "dataset_gap": 0.118,
+      "cnr_by_dataset": {
+        "CHASE_DB1": 1.102,
+        "DRIVE": 1.284,
+        "HRF": 1.053,
+        "STARE": 0.921
+      },
+      "cnr_mean": 1.09,
+      "cnr_spread_between_datasets": 0.12
+    }
+  }
+}

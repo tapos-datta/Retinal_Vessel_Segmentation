@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Full method with the tile fix: one FOV-based normalization per image instead of per-patch min-max inside the enhancement module.", "model": {"enhancement": "hybrid", "patch_minmax": false}, "data": {"scale_norm": true, "fov_norm": true}, "augment": {"photometric": "strong"}}

@@ -1,0 +1,1 @@
+{"extends": "../base.json", "_note": "Hybrid + FOV-diameter scale normalization.", "model": {"enhancement": "hybrid"}, "data": {"scale_norm": true}}

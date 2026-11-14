@@ -1,0 +1,91 @@
+{
+  "rule": "argmin_i |(hybrid_weber - rgb Dice)_i - median|, seed 1, ties by id",
+  "seed": 1,
+  "mean_over_seeds": [
+    1,
+    2,
+    3
+  ],
+  "datasets": {
+    "CHASE_DB1": {
+      "id": "Image_02R",
+      "n_images": 28,
+      "median_diff": -0.010729999999999962,
+      "image_diff": -0.01097999999999999,
+      "seed1_csv_dice": {
+        "rgb": 0.79115,
+        "hybrid": 0.80657,
+        "hybrid_weber": 0.78017
+      },
+      "mean3_dice": {
+        "rgb": 0.7857334523809523,
+        "hybrid": 0.8010808333333334,
+        "hybrid_weber": 0.7843467857142858
+      }
+    },
+    "DRIVE": {
+      "id": "22_training",
+      "n_images": 20,
+      "median_diff": -0.012734999999999996,
+      "image_diff": -0.01468999999999998,
+      "seed1_csv_dice": {
+        "rgb": 0.78962,
+        "hybrid": 0.76325,
+        "hybrid_weber": 0.77493
+      },
+      "mean3_dice": {
+        "rgb": 0.8057248333333334,
+        "hybrid": 0.7925425,
+        "hybrid_weber": 0.7901146666666667
+      }
+    },
+    "HRF": {
+      "id": "04_dr",
+      "n_images": 45,
+      "median_diff": -0.022219999999999906,
+      "image_diff": -0.022219999999999906,
+      "seed1_csv_dice": {
+        "rgb": 0.76028,
+        "hybrid": 0.79171,
+        "hybrid_weber": 0.73806
+      },
+      "mean3_dice": {
+        "rgb": 0.780122888888889,
+        "hybrid": 0.8083921481481483,
+        "hybrid_weber": 0.7915157037037037
+      }
+    },
+    "STARE": {
+      "id": "im0235",
+      "n_images": 20,
+      "median_diff": -0.025455000000000005,
+      "image_diff": -0.028710000000000013,
+      "seed1_csv_dice": {
+        "rgb": 0.85217,
+        "hybrid": 0.82849,
+        "hybrid_weber": 0.82346
+      },
+      "mean3_dice": {
+        "rgb": 0.76892,
+        "hybrid": 0.7853888333333332,
+        "hybrid_weber": 0.7917741666666666
+      }
+    },
+    "FIVES": {
+      "id": "FIVES_train_473_N",
+      "n_images": 792,
+      "median_diff": 0.026589999999999947,
+      "image_diff": 0.026699999999999946,
+      "seed1_csv_dice": {
+        "rgb": 0.81442,
+        "hybrid": 0.78622,
+        "hybrid_weber": 0.84112
+      },
+      "mean3_dice": {
+        "rgb": 0.7705761111111111,
+        "hybrid": 0.7401041582491583,
+        "hybrid_weber": 0.7815240025252526
+      }
+    }
+  }
+}

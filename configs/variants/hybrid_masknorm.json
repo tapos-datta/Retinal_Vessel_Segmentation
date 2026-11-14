@@ -1,0 +1,1 @@
+{"extends": "./hybrid.json", "_note": "Stage 6: hybrid with its per-patch min-max computed inside the eye only (outside-FOV pixels set to 0) and the maximum capped at the 99.5th percentile.", "model": {"enhancement": "hybrid", "ablation": {"norm": "masked", "cap_q": 0.995}}, "data": {"mask_fov": true}}
