@@ -7,7 +7,7 @@ type: software
 authors:
   - family-names: Datta
     given-names: Tapos
-repository-code: "https://github.com/tapos-datta/U2NetE_Research"
+repository-code: "https://github.com/tapos-datta/Retinal_Vessel_Segmentation"
 abstract: >-
   A controlled study of a learnable image-enhancement front-end placed before a
   U²-Net-lite retinal vessel segmenter. The backbone, training recipe and

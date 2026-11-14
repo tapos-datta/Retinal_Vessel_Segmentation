@@ -1,7 +1,7 @@
 # U²-Net-E `v2` — released checkpoints
 
 This archive holds the 15 checkpoints used to produce every figure in the
-[U2NetE_Research](https://github.com/tapos-datta/U2NetE_Research) repository: seed 1 of the three
+[Retinal_Vessel_Segmentation](https://github.com/tapos-datta/Retinal_Vessel_Segmentation) repository: seed 1 of the three
 main variants, on each of the four leave-one-dataset-out folds and on the `all` split used for the
 external FIVES test.
 
@@ -33,8 +33,8 @@ trained on measures nothing.
 ## Use
 
 ```bash
-git clone https://github.com/tapos-datta/U2NetE_Research
-cd U2NetE_Research/v2
+git clone https://github.com/tapos-datta/Retinal_Vessel_Segmentation
+cd Retinal_Vessel_Segmentation
 tar xzf u2nete-v2-weights-seed1.tar.gz          # creates runs/...
 python evaluate.py runs/hybrid_weber/all/all/seed1 --external data/external_FIVES
 ```

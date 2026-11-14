@@ -39,7 +39,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/tapos-datta/U2NetE_Research"
+Repository = "https://github.com/tapos-datta/Retinal_Vessel_Segmentation"
 
 # Only the library is packaged. The scripts in the repository root are entry
 # points that are run in place (see docs/REPRODUCIBILITY.md); they are not
