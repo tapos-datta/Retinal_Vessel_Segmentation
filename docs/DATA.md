@@ -125,18 +125,20 @@ Raw images and `.pt` checkpoints are excluded from Git. Two routes:
    distributions and run `prepare_data.py` and `make_splits.py` as in
    [REPRODUCIBILITY.md](REPRODUCIBILITY.md). `data/pool/metadata.csv` and `splits/` are tracked, so
    a rebuild can be checked against them image by image.
-2. **Ask for help with a rebuild.** Open an issue or contact the repository author with your
-   affiliation and research purpose. What can be shared is limited by each dataset's own terms, and
-   for several of them redistribution of the images, including the converted copies in `data/pool`,
-   is not permitted. In practice this means help with the preparation step, the manifests above to
-   confirm the rebuild matched, and the trained weights described below rather than the images.
+2. **Ask for help if the rebuild does not match.** Open an issue. The images themselves cannot be
+   shared: several of the datasets do not permit redistribution, and that applies to the converted
+   copies in `data/pool` as much as to the originals. What can be offered is help with the
+   preparation step and the manifests above to find where a rebuild diverged.
 
 ### Trained weights
 
-Weights are not in Git either; `runs/` is about 2.7 GB. A curated subset is published separately,
-with its own terms: the models were trained on research-use datasets, so **the weights are for
-research use under the same restrictions as the training data**, and the Apache 2.0 licence of this
-repository does not extend to them.
+Weights are not in Git either; `runs/` is about 2.7 GB. A curated subset, the 15 checkpoints behind
+every figure, is attached to the
+[latest release](https://github.com/tapos-datta/Retinal_Vessel_Segmentation/releases) as
+`retinal-vessel-seg-v2-weights-seed1.tar.gz` (66 MB) and can be downloaded without any request or
+approval; see [WEIGHTS.md](WEIGHTS.md). They carry their own terms: the models were trained on
+research-use datasets, so **the weights are for research use under the same restrictions as the
+training data**, and the Apache 2.0 licence of this repository does not extend to them.
 
 Note that the weights are not needed to check any published number. Every run folder keeps its
 `config.json`, `fold.json`, `env.json` and `test/per_image.csv`, and those are tracked, so each

@@ -93,13 +93,13 @@ documentation in `docs/` is written from those internal files.
 
 ---
 
-## Data & Pretrained Checkpoints (Author Approval Required)
+## Data & Pretrained Checkpoints
 
-Raw datasets and `.pt` checkpoints are excluded from Git (only `data/pool/metadata.csv`, `splits/`, `configs/`, and summary tables are tracked).
+Raw images and `.pt` checkpoints are not in Git; only `data/pool/metadata.csv`, the two manifests, `splits/`, `configs/`, the per-run logs and the summary tables are tracked. Nothing below is needed to check a published number: every run folder keeps its `config.json`, `fold.json`, `env.json` and `test/per_image.csv`.
 
-1. **Rebuild from public sources:** Download DRIVE, HRF, CHASE_DB1, STARE, and FIVES from their official distributions and run `prepare_data.py` + `make_splits.py` (see [docs/DATA.md](docs/DATA.md) for sources and terms, and [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for commands). `data/pool/MANIFEST.sha256` and `data/external_FIVES/MANIFEST.sha256` let you confirm that your rebuild matches the one used here, file by file.
-2. **Weights:** a curated subset of checkpoints is published as a release rather than in Git ([docs/WEIGHTS.md](docs/WEIGHTS.md)). They are for research use under the same restrictions as the training data; the Apache 2.0 licence does not extend to them.
-3. **Images:** several of the datasets do not permit redistribution, including of the converted copies in `data/pool`, so those cannot be shared on request. Open an issue if you need help with the preparation step.
+- **Weights — open download.** The 15 checkpoints behind every figure (seed 1 of `rgb`, `hybrid` and `hybrid_weber`, on the four LODO folds and the `all` split) are attached to the [latest release](https://github.com/tapos-datta/Retinal_Vessel_Segmentation/releases) as `retinal-vessel-seg-v2-weights-seed1.tar.gz` (66 MB). No request or approval is needed. They are for research use under the same restrictions as the training data, and the Apache 2.0 licence does not extend to them. Details: [docs/WEIGHTS.md](docs/WEIGHTS.md).
+- **Datasets — rebuild them yourself.** Download DRIVE, HRF, CHASE_DB1, STARE and FIVES from their official distributions and run `prepare_data.py` + `make_splits.py` (sources and terms: [docs/DATA.md](docs/DATA.md); commands: [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md)). `data/pool/MANIFEST.sha256` and `data/external_FIVES/MANIFEST.sha256` confirm, file by file, that your rebuild matches the one used here.
+- **Images cannot be redistributed**, including the converted copies in `data/pool`, because several of the datasets do not allow it. Open an issue if you get stuck on the preparation step.
 
 ---
 
